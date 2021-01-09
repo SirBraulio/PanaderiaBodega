@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Serviceinsertarproducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Venta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Venta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Idproducto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rutcliente" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Diferenciador" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceinsertarproductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceActulizarVent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Venta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceActulizarVentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetSum">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetSumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceGetSumResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetVentasSinCliente">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetVentasSinClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceGetVentasSinClienteResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetSumaTotaldeVentas">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetSumaTotaldeVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceGetSumaTotaldeVentasResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetConsultaVenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetConsultaVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceGetConsultaVentaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceinsertarproductoSoapIn">
+    <wsdl:part name="parameters" element="tns:Serviceinsertarproducto" />
+  </wsdl:message>
+  <wsdl:message name="ServiceinsertarproductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarproductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActulizarVentSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceActulizarVent" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActulizarVentSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceActulizarVentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetSumSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetSum" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetSumSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetVentasSinClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetVentasSinCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetVentasSinClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetVentasSinClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetSumaTotaldeVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetSumaTotaldeVentas" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetSumaTotaldeVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetSumaTotaldeVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetConsultaVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetConsultaVenta" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetConsultaVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetConsultaVentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceVentaSoap">
+    <wsdl:operation name="Serviceinsertarproducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta una venta: para una venta abierta diferenciador = 0 para una cerrada = 1 </wsdl:documentation>
+      <wsdl:input message="tns:ServiceinsertarproductoSoapIn" />
+      <wsdl:output message="tns:ServiceinsertarproductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActulizarVent">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que actualiza los registros de venta poniendo el diferenciador = 1 </wsdl:documentation>
+      <wsdl:input message="tns:ServiceActulizarVentSoapIn" />
+      <wsdl:output message="tns:ServiceActulizarVentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSum">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna la suma total de valores </wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetSumSoapIn" />
+      <wsdl:output message="tns:ServiceGetSumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetVentasSinCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna el total de ventas sin clientes asociados </wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetVentasSinClienteSoapIn" />
+      <wsdl:output message="tns:ServiceGetVentasSinClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSumaTotaldeVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna la suma total de las ventas </wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetSumaTotaldeVentasSoapIn" />
+      <wsdl:output message="tns:ServiceGetSumaTotaldeVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que llena la tabla producto de datos</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetConsultaVentaSoapIn" />
+      <wsdl:output message="tns:ServiceGetConsultaVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceVentaSoap" type="tns:WebServiceVentaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Serviceinsertarproducto">
+      <soap:operation soapAction="http://tempuri.org/Serviceinsertarproducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActulizarVent">
+      <soap:operation soapAction="http://tempuri.org/ServiceActulizarVent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSum">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetVentasSinCliente">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetVentasSinCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSumaTotaldeVentas">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetSumaTotaldeVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaVenta">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetConsultaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceVentaSoap12" type="tns:WebServiceVentaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Serviceinsertarproducto">
+      <soap12:operation soapAction="http://tempuri.org/Serviceinsertarproducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActulizarVent">
+      <soap12:operation soapAction="http://tempuri.org/ServiceActulizarVent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSum">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetSum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetVentasSinCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetVentasSinCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetSumaTotaldeVentas">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetSumaTotaldeVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaVenta">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetConsultaVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVenta">
+    <wsdl:port name="WebServiceVentaSoap" binding="tns:WebServiceVentaSoap">
+      <soap:address location="https://localhost:44378/WebServiceVenta.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceVentaSoap12" binding="tns:WebServiceVentaSoap12">
+      <soap12:address location="https://localhost:44378/WebServiceVenta.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

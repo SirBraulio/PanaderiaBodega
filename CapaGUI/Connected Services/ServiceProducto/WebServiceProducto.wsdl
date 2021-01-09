@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Serviceinsertarproducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Producto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Idproducto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio_unitario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dias_vencimiento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Idproveedor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo_producto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Caracteristica" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceinsertarproductoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicebuscaProv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicebuscaProvResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicebuscaProvResult" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceeliminarProv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IDaborrar" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceeliminarProvResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceactualizarProv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="producto" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceactualizarProvResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetMinDiasV">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetMinDiasVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceGetMinDiasVResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="diasv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetCantidadP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idproducto" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetCantidadPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceGetCantidadPResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceSetCantidadP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idproducto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="newcantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceSetCantidadPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ServiceSetCantidadPResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetProductMasVendido">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetProductMasVendidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceGetProductMasVendidoResult" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetClienteConMasCompras">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetClienteConMasComprasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceGetClienteConMasComprasResult" type="tns:Producto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceGetConsultaProducto">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceGetConsultaProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceGetConsultaProductoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceinsertarproductoSoapIn">
+    <wsdl:part name="parameters" element="tns:Serviceinsertarproducto" />
+  </wsdl:message>
+  <wsdl:message name="ServiceinsertarproductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarproductoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicebuscaProvSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicebuscaProv" />
+  </wsdl:message>
+  <wsdl:message name="ServicebuscaProvSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicebuscaProvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceeliminarProvSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceeliminarProv" />
+  </wsdl:message>
+  <wsdl:message name="ServiceeliminarProvSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceeliminarProvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceactualizarProvSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceactualizarProv" />
+  </wsdl:message>
+  <wsdl:message name="ServiceactualizarProvSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceactualizarProvResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetMinDiasVSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetMinDiasV" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetMinDiasVSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetMinDiasVResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="GetNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetCantidadPSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetCantidadP" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetCantidadPSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetCantidadPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSetCantidadPSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceSetCantidadP" />
+  </wsdl:message>
+  <wsdl:message name="ServiceSetCantidadPSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceSetCantidadPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetProductMasVendidoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetProductMasVendido" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetProductMasVendidoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetProductMasVendidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetClienteConMasComprasSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetClienteConMasCompras" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetClienteConMasComprasSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetClienteConMasComprasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetConsultaProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceGetConsultaProducto" />
+  </wsdl:message>
+  <wsdl:message name="ServiceGetConsultaProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceGetConsultaProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceProductoSoap">
+    <wsdl:operation name="Serviceinsertarproducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta el producto </wsdl:documentation>
+      <wsdl:input message="tns:ServiceinsertarproductoSoapIn" />
+      <wsdl:output message="tns:ServiceinsertarproductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProv">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que busca el producto por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServicebuscaProvSoapIn" />
+      <wsdl:output message="tns:ServicebuscaProvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceeliminarProv">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que elimina un producto por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServiceeliminarProvSoapIn" />
+      <wsdl:output message="tns:ServiceeliminarProvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarProv">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Actualiza o Modifica un producto por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServiceactualizarProvSoapIn" />
+      <wsdl:output message="tns:ServiceactualizarProvSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetMinDiasV">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna los dias mas sercanos a vencer</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetMinDiasVSoapIn" />
+      <wsdl:output message="tns:ServiceGetMinDiasVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna el primer nombre retornado a partir de los dias a vencer</wsdl:documentation>
+      <wsdl:input message="tns:GetNameSoapIn" />
+      <wsdl:output message="tns:GetNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetCantidadP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna la cantidad del producto si le entregas la id de el mismo</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetCantidadPSoapIn" />
+      <wsdl:output message="tns:ServiceGetCantidadPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSetCantidadP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que setea la nueva cantidad del producto si le entregas la id de el mismo</wsdl:documentation>
+      <wsdl:input message="tns:ServiceSetCantidadPSoapIn" />
+      <wsdl:output message="tns:ServiceSetCantidadPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetProductMasVendido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna los datos del producto con mas compras, independiente de la cantidad de unidades vendidas</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetProductMasVendidoSoapIn" />
+      <wsdl:output message="tns:ServiceGetProductMasVendidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetClienteConMasCompras">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna los datos del cliente con mas compras</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetClienteConMasComprasSoapIn" />
+      <wsdl:output message="tns:ServiceGetClienteConMasComprasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaProducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que llena la tabla producto de datos</wsdl:documentation>
+      <wsdl:input message="tns:ServiceGetConsultaProductoSoapIn" />
+      <wsdl:output message="tns:ServiceGetConsultaProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceProductoSoap" type="tns:WebServiceProductoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Serviceinsertarproducto">
+      <soap:operation soapAction="http://tempuri.org/Serviceinsertarproducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProv">
+      <soap:operation soapAction="http://tempuri.org/ServicebuscaProv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceeliminarProv">
+      <soap:operation soapAction="http://tempuri.org/ServiceeliminarProv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarProv">
+      <soap:operation soapAction="http://tempuri.org/ServiceactualizarProv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetMinDiasV">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetMinDiasV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://tempuri.org/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetCantidadP">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetCantidadP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSetCantidadP">
+      <soap:operation soapAction="http://tempuri.org/ServiceSetCantidadP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetProductMasVendido">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetProductMasVendido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetClienteConMasCompras">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetClienteConMasCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaProducto">
+      <soap:operation soapAction="http://tempuri.org/ServiceGetConsultaProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceProductoSoap12" type="tns:WebServiceProductoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Serviceinsertarproducto">
+      <soap12:operation soapAction="http://tempuri.org/Serviceinsertarproducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaProv">
+      <soap12:operation soapAction="http://tempuri.org/ServicebuscaProv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceeliminarProv">
+      <soap12:operation soapAction="http://tempuri.org/ServiceeliminarProv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarProv">
+      <soap12:operation soapAction="http://tempuri.org/ServiceactualizarProv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetMinDiasV">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetMinDiasV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap12:operation soapAction="http://tempuri.org/GetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetCantidadP">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetCantidadP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceSetCantidadP">
+      <soap12:operation soapAction="http://tempuri.org/ServiceSetCantidadP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetProductMasVendido">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetProductMasVendido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetClienteConMasCompras">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetClienteConMasCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceGetConsultaProducto">
+      <soap12:operation soapAction="http://tempuri.org/ServiceGetConsultaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceProducto">
+    <wsdl:port name="WebServiceProductoSoap" binding="tns:WebServiceProductoSoap">
+      <soap:address location="https://localhost:44378/WebServiceProducto.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceProductoSoap12" binding="tns:WebServiceProductoSoap12">
+      <soap12:address location="https://localhost:44378/WebServiceProducto.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,6 @@
+C:\ProyectoBodegaPanaderia\CapaConec\bin\Debug\CapaConec.dll
+C:\ProyectoBodegaPanaderia\CapaConec\bin\Debug\CapaConec.pdb
+C:\ProyectoBodegaPanaderia\CapaConec\obj\Debug\CapaConec.csproj.CoreCompileInputs.cache
+C:\ProyectoBodegaPanaderia\CapaConec\obj\Debug\CapaConec.dll
+C:\ProyectoBodegaPanaderia\CapaConec\obj\Debug\CapaConec.pdb
+C:\ProyectoBodegaPanaderia\CapaConec\obj\Debug\CapaConec.csprojAssemblyReference.cache

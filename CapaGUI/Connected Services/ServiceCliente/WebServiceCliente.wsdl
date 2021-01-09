@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ServiceinsertarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Idcliente" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rutcliente" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero_celular" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cant_compras" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceinsertarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServicebuscaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServicebuscaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServicebuscaClienteResult" type="tns:Cliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceactualizarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceactualizarClienteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceActualizarCompreasCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sku" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceActualizarCompreasClienteResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ServiceinsertarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServiceinsertarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServicebuscaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServicebuscaCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServicebuscaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServicebuscaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceactualizarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceactualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServiceactualizarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceactualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActualizarCompreasClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceActualizarCompreasCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServiceActualizarCompreasClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceActualizarCompreasClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceClienteSoap">
+    <wsdl:operation name="ServiceinsertarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que agrega un nuevo cliente </wsdl:documentation>
+      <wsdl:input message="tns:ServiceinsertarClienteSoapIn" />
+      <wsdl:output message="tns:ServiceinsertarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que busca el cliente por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServicebuscaClienteSoapIn" />
+      <wsdl:output message="tns:ServicebuscaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Actualiza o Modifica un cliente por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServiceactualizarClienteSoapIn" />
+      <wsdl:output message="tns:ServiceactualizarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizarCompreasCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Actualiza la cantidad de compras de un cliente por su id</wsdl:documentation>
+      <wsdl:input message="tns:ServiceActualizarCompreasClienteSoapIn" />
+      <wsdl:output message="tns:ServiceActualizarCompreasClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceClienteSoap" type="tns:WebServiceClienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceinsertarCliente">
+      <soap:operation soapAction="http://tempuri.org/ServiceinsertarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaCliente">
+      <soap:operation soapAction="http://tempuri.org/ServicebuscaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/ServiceactualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizarCompreasCliente">
+      <soap:operation soapAction="http://tempuri.org/ServiceActualizarCompreasCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceClienteSoap12" type="tns:WebServiceClienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceinsertarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServiceinsertarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServicebuscaCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServicebuscaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceactualizarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServiceactualizarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceActualizarCompreasCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServiceActualizarCompreasCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceCliente">
+    <wsdl:port name="WebServiceClienteSoap" binding="tns:WebServiceClienteSoap">
+      <soap:address location="https://localhost:44378/WebServiceCliente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceClienteSoap12" binding="tns:WebServiceClienteSoap12">
+      <soap12:address location="https://localhost:44378/WebServiceCliente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

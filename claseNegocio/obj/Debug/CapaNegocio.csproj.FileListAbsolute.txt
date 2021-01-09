@@ -1,0 +1,11 @@
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\claseNegocio.dll
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\claseNegocio.pdb
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\CapaConec.dll
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\capaDTO.dll
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\CapaConec.pdb
+C:\ProyectoBodegaPanaderia\claseNegocio\bin\Debug\capaDTO.pdb
+C:\ProyectoBodegaPanaderia\claseNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\ProyectoBodegaPanaderia\claseNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\ProyectoBodegaPanaderia\claseNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\ProyectoBodegaPanaderia\claseNegocio\obj\Debug\claseNegocio.dll
+C:\ProyectoBodegaPanaderia\claseNegocio\obj\Debug\claseNegocio.pdb

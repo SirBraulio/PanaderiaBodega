@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33B0E144-0DC0-4681-8994-F929C158BE22}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaGUI</RootNamespace>
+    <AssemblyName>CapaGUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ServiceCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceProveedor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceVenta\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceVerificadorDatos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceVerificarUserPsw\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdminClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdminClientes.Designer.cs">
+      <DependentUpon>GUIAdminClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIAdminUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIAdminUsers.Designer.cs">
+      <DependentUpon>GUIAdminUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIlogin.Designer.cs">
+      <DependentUpon>GUIlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUImenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUImenu.Designer.cs">
+      <DependentUpon>GUImenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIProducto.Designer.cs">
+      <DependentUpon>GUIProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIProveedor.Designer.cs">
+      <DependentUpon>GUIProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIVentas.Designer.cs">
+      <DependentUpon>GUIVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSet.cs">
+      <DependentUpon>panaderiaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSetClientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSetClientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSetProducto.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSetProducto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSetUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSetUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="panaderiaDataSetVenta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>panaderiaDataSetVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TablaEst1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablaEst1.Designer.cs">
+      <DependentUpon>TablaEst1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TablaEst2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablaEst2.Designer.cs">
+      <DependentUpon>TablaEst2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TablaEst3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TablaEst3.Designer.cs">
+      <DependentUpon>TablaEst3.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUIAdminClientes.resx">
+      <DependentUpon>GUIAdminClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIAdminUsers.resx">
+      <DependentUpon>GUIAdminUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIlogin.resx">
+      <DependentUpon>GUIlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUImenu.resx">
+      <DependentUpon>GUImenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIProducto.resx">
+      <DependentUpon>GUIProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIVentas.resx">
+      <DependentUpon>GUIVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUIProveedor.resx">
+      <DependentUpon>GUIProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablaEst1.resx">
+      <DependentUpon>TablaEst1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablaEst2.resx">
+      <DependentUpon>TablaEst2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TablaEst3.resx">
+      <DependentUpon>TablaEst3.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServiceCliente\CapaGUI.ServiceCliente.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaGUI.ServiceCliente.ServiceactualizarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaGUI.ServiceCliente.ServiceActualizarCompreasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaGUI.ServiceCliente.ServicebuscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\CapaGUI.ServiceCliente.ServiceinsertarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.wsdl" />
+    <None Include="Connected Services\ServiceProducto\CapaGUI.ServiceProducto.Producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.wsdl" />
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.Proveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.ServcioactualizarProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.ServiciobuscaConcidenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.ServiciobuscaProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.ServicioeliminarProvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\CapaGUI.ServiceProveedor.ServicioinsertarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.wsdl" />
+    <None Include="Connected Services\ServiceVenta\WebServiceVenta.wsdl" />
+    <None Include="Connected Services\ServiceVerificadorDatos\CapaGUI.ServiceVerificadorDatos.VerificarDatosProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificadorDatos\WebServiceVerificarDatos.wsdl" />
+    <None Include="Connected Services\ServiceVerificarUserPsw\CapaGUI.ServiceVerificarUserPsw.GetUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificarUserPsw\CapaGUI.ServiceVerificarUserPsw.ServiceBuscarUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificarUserPsw\CapaGUI.ServiceVerificarUserPsw.ServiceDeleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificarUserPsw\CapaGUI.ServiceVerificarUserPsw.ServiceinsertarUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificarUserPsw\CapaGUI.ServiceVerificarUserPsw.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceVerificarUserPsw\WebServiceInicioSesion.wsdl" />
+    <None Include="panaderiaDataSet.xsc">
+      <DependentUpon>panaderiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSet.xss">
+      <DependentUpon>panaderiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSet1.xsc">
+      <DependentUpon>panaderiaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSet1.xss">
+      <DependentUpon>panaderiaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSet2.xsc">
+      <DependentUpon>panaderiaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSet2.xss">
+      <DependentUpon>panaderiaDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetClientes.xsc">
+      <DependentUpon>panaderiaDataSetClientes.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetClientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSetClientes.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSetClientes.xss">
+      <DependentUpon>panaderiaDataSetClientes.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetProducto.xsc">
+      <DependentUpon>panaderiaDataSetProducto.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetProducto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSetProducto.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSetProducto.xss">
+      <DependentUpon>panaderiaDataSetProducto.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetUser.xsc">
+      <DependentUpon>panaderiaDataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetUser.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSetUser.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSetUser.xss">
+      <DependentUpon>panaderiaDataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetVenta.xsc">
+      <DependentUpon>panaderiaDataSetVenta.xsd</DependentUpon>
+    </None>
+    <None Include="panaderiaDataSetVenta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>panaderiaDataSetVenta.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="panaderiaDataSetVenta.xss">
+      <DependentUpon>panaderiaDataSetVenta.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaDTO\capaDTO.csproj">
+      <Project>{6f6d5f8d-36ca-4e51-86b5-27acb531db47}</Project>
+      <Name>capaDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\claseNegocio\CapaNegocio.csproj">
+      <Project>{5346da93-0fc0-4dae-81d9-4bbe469937fa}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceCliente\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceProveedor\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceVenta\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceVerificadorDatos\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceVerificarUserPsw\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificarUserPsw\WebServiceInicioSesion.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificarUserPsw\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificarUserPsw\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificarUserPsw\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificadorDatos\WebServiceVerificarDatos.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificadorDatos\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificadorDatos\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVerificadorDatos\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProveedor\WebServiceProveedor.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProveedor\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProveedor\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceProveedor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCliente\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCliente\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVenta\WebServiceVenta.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVenta\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVenta\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceVenta\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,6 @@
+C:\ProyectoBodegaPanaderia\capaDTO\bin\Debug\capaDTO.dll
+C:\ProyectoBodegaPanaderia\capaDTO\bin\Debug\capaDTO.pdb
+C:\ProyectoBodegaPanaderia\capaDTO\obj\Debug\capaDTO.csprojAssemblyReference.cache
+C:\ProyectoBodegaPanaderia\capaDTO\obj\Debug\capaDTO.csproj.CoreCompileInputs.cache
+C:\ProyectoBodegaPanaderia\capaDTO\obj\Debug\capaDTO.dll
+C:\ProyectoBodegaPanaderia\capaDTO\obj\Debug\capaDTO.pdb

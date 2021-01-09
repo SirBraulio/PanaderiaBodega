@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerificarDatosProducto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dto1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto5" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto6" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto7" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dto8" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificarDatosProductoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerificarDatosProductoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerificarDatosProductoSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificarDatosProducto" />
+  </wsdl:message>
+  <wsdl:message name="VerificarDatosProductoSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificarDatosProductoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceVerificarDatosSoap">
+    <wsdl:operation name="VerificarDatosProducto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que verifica si los datos estan vacion, o si superan el largo estimado</wsdl:documentation>
+      <wsdl:input message="tns:VerificarDatosProductoSoapIn" />
+      <wsdl:output message="tns:VerificarDatosProductoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceVerificarDatosSoap" type="tns:WebServiceVerificarDatosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarDatosProducto">
+      <soap:operation soapAction="http://tempuri.org/VerificarDatosProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceVerificarDatosSoap12" type="tns:WebServiceVerificarDatosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerificarDatosProducto">
+      <soap12:operation soapAction="http://tempuri.org/VerificarDatosProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceVerificarDatos">
+    <wsdl:port name="WebServiceVerificarDatosSoap" binding="tns:WebServiceVerificarDatosSoap">
+      <soap:address location="https://localhost:44378/WebServiceVerificarDatos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceVerificarDatosSoap12" binding="tns:WebServiceVerificarDatosSoap12">
+      <soap12:address location="https://localhost:44378/WebServiceVerificarDatos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

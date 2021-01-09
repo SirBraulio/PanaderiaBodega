@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contra" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceinsertarUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Usuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contraseña" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ServiceinsertarUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceDeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceDeleteUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ServiceBuscarUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceBuscarUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceBuscarUserResult" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="GetUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceinsertarUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarUser" />
+  </wsdl:message>
+  <wsdl:message name="ServiceinsertarUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceinsertarUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceDeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ServiceDeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceDeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ServiceBuscarUserSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceBuscarUser" />
+  </wsdl:message>
+  <wsdl:message name="ServiceBuscarUserSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceBuscarUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceInicioSesionSoap">
+    <wsdl:operation name="GetUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que verifica si el user y contraseña es correcto</wsdl:documentation>
+      <wsdl:input message="tns:GetUserSoapIn" />
+      <wsdl:output message="tns:GetUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceinsertarUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Inserta un nuevo usuario </wsdl:documentation>
+      <wsdl:input message="tns:ServiceinsertarUserSoapIn" />
+      <wsdl:output message="tns:ServiceinsertarUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceDeleteUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que borra un  usuario existente </wsdl:documentation>
+      <wsdl:input message="tns:ServiceDeleteUserSoapIn" />
+      <wsdl:output message="tns:ServiceDeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que busca a  un  usuario existente </wsdl:documentation>
+      <wsdl:input message="tns:ServiceBuscarUserSoapIn" />
+      <wsdl:output message="tns:ServiceBuscarUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceInicioSesionSoap" type="tns:WebServiceInicioSesionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceinsertarUser">
+      <soap:operation soapAction="http://tempuri.org/ServiceinsertarUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceDeleteUser">
+      <soap:operation soapAction="http://tempuri.org/ServiceDeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarUser">
+      <soap:operation soapAction="http://tempuri.org/ServiceBuscarUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceInicioSesionSoap12" type="tns:WebServiceInicioSesionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceinsertarUser">
+      <soap12:operation soapAction="http://tempuri.org/ServiceinsertarUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceDeleteUser">
+      <soap12:operation soapAction="http://tempuri.org/ServiceDeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarUser">
+      <soap12:operation soapAction="http://tempuri.org/ServiceBuscarUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceInicioSesion">
+    <wsdl:port name="WebServiceInicioSesionSoap" binding="tns:WebServiceInicioSesionSoap">
+      <soap:address location="https://localhost:44378/WebServiceInicioSesion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceInicioSesionSoap12" binding="tns:WebServiceInicioSesionSoap12">
+      <soap12:address location="https://localhost:44378/WebServiceInicioSesion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
